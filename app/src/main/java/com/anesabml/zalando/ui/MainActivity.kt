@@ -1,7 +1,8 @@
-package com.anesabml.zalando
+package com.anesabml.zalando.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.anesabml.zalando.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
