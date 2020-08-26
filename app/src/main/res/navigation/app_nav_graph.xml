@@ -8,6 +8,11 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.anesabml.zalando.ui.splash.SplashFragment"
-        android:label="fragment_splash"
+        android:label="@string/label_splash"
         tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.anesabml.zalando.productList.ProductListFragment"
+        android:label="@string/label_products"
+        tools:layout="@layout/fragment_product_list" />
 </navigation>
