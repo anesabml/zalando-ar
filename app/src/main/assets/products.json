@@ -8,6 +8,7 @@
         ],
         "name": "T-Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -30,6 +31,7 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -52,6 +54,7 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
+        "category": "Pants",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -74,6 +77,7 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -96,6 +100,7 @@
         ],
         "name": "T-Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -118,6 +123,7 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
+        "category": "Pants",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -140,6 +146,7 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -162,6 +169,7 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -184,6 +192,7 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
+        "category": "Pants",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -205,6 +214,7 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
+        "category": "T-Shirt",
         "price": 25.0,
         "availableSizes": [
             "s",

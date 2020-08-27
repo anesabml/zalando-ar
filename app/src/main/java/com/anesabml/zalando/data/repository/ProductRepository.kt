@@ -6,12 +6,9 @@ import com.anesabml.zalando.domain.data.DataSource
 import com.anesabml.zalando.domain.data.IProductRepository
 import com.anesabml.zalando.domain.mapper.ModuleEntityMapper
 import com.anesabml.zalando.domain.model.Product
-import com.anesabml.zalando.utils.DataResponse
 import com.anesabml.zalando.utils.DefaultDispatcherProvider
 import com.anesabml.zalando.utils.DispatcherProvider
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 
 class ProductRepository(
@@ -19,13 +16,8 @@ class ProductRepository(
     private val mapper: ModuleEntityMapper<Product, ProductEntity> = DatabaseMapper,
     private val dispatcherProvider: DispatcherProvider = DefaultDispatcherProvider()
 ) : IProductRepository {
-    override suspend fun getProducts(): Flow<DataResponse<List<Product>>> {
-        return try {
-            dataSource.getProducts()
-                .map { list -> DataResponse.Success(list.map { entity -> mapper.fromEntity(entity) }) }
-                .flowOn(dispatcherProvider.io())
-        } catch (exception: Throwable) {
-            flowOf(DataResponse.Error(exception.message ?: "Error trying to get products"))
-        }
+    override suspend fun getProducts(): Flow<List<Product>> {
+        return dataSource.getProducts()
+            .map { list -> list.map { entity -> mapper.fromEntity(entity) } }
     }
 }

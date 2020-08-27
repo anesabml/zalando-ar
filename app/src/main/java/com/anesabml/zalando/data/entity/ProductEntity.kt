@@ -13,6 +13,7 @@ data class ProductEntity(
     @ColumnInfo val images: List<String>,
     @ColumnInfo val name: String,
     @ColumnInfo val description: String,
+    @ColumnInfo val category: String,
     @ColumnInfo val price: Float,
     @ColumnInfo val availableSizes: List<String>,
     @ColumnInfo val availableColors: List<String>,

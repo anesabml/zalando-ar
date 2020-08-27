@@ -7,6 +7,7 @@ data class Product(
     val images: List<String>,
     val name: String,
     val description: String,
+    val category: String,
     val price: Float,
     val availableSizes: List<String>,
     val availableColors: List<String>,
