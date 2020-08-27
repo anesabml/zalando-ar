@@ -7,4 +7,8 @@
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
+    <style name="AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+
+    </style>
+
 </resources>

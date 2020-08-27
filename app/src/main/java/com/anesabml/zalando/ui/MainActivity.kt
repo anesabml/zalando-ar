@@ -1,12 +1,18 @@
 package com.anesabml.zalando.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.anesabml.zalando.R
+import androidx.appcompat.app.AppCompatActivity
+import com.anesabml.zalando.databinding.ActivityMainBinding
+import com.anesabml.zalando.extensions.viewBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::inflate)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
     }
 }
