@@ -1,4 +1,4 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import android.graphics.Rect
 import android.view.View

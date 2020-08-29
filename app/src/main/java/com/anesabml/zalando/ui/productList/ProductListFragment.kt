@@ -1,4 +1,4 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.anesabml.zalando.R
 import com.anesabml.zalando.databinding.FragmentProductListBinding
 import com.anesabml.zalando.extensions.viewBinding
-import com.anesabml.zalando.productList.state.ProductListViewState
 import com.anesabml.zalando.viewModelFactoryGraph
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 

@@ -86,6 +86,8 @@ dependencies {
 
     implementation "androidx.work:work-runtime-ktx:$rootProject.work_version"
 
+    implementation "com.github.smarteist:autoimageslider:$rootProject.image_slider_version"
+
     testImplementation "junit:junit:4.13"
     testImplementation "com.google.truth:truth:$rootProject.truth_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines_version"

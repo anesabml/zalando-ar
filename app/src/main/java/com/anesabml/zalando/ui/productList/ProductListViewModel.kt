@@ -1,11 +1,10 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anesabml.zalando.domain.data.IProductRepository
-import com.anesabml.zalando.productList.state.ProductListViewState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect

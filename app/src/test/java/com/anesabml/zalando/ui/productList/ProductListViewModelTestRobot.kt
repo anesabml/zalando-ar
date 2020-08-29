@@ -1,8 +1,7 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import com.anesabml.zalando.data.FakeProductsRepository
 import com.anesabml.zalando.domain.model.Product
-import com.anesabml.zalando.productList.state.ProductListViewState
 import com.anesabml.zalando.utils.getOrAwaitValue
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi

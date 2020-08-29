@@ -1,9 +1,8 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.anesabml.zalando.data.DummyData
 import com.anesabml.zalando.domain.model.Product
-import com.anesabml.zalando.productList.state.ProductListViewState
 import com.anesabml.zalando.utils.CoroutineTestRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow

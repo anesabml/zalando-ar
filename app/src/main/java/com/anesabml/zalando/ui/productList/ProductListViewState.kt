@@ -1,4 +1,4 @@
-package com.anesabml.zalando.productList.state
+package com.anesabml.zalando.ui.productList
 
 import com.anesabml.zalando.domain.model.Product
 

@@ -1,11 +1,10 @@
-package com.anesabml.zalando.productList
+package com.anesabml.zalando.ui.productList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.anesabml.zalando.R
 import com.anesabml.zalando.databinding.ItemProductBinding
 import com.anesabml.zalando.domain.model.Product
@@ -36,10 +35,7 @@ class ProductListRecyclerViewAdapter(private val productOnClickListener: Product
                 if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
             with(binding) {
                 root.animation = animation
-                root.setOnClickListener {
-                    productOnClickListener.onClick(product)
-                }
-                productImage.load(product.images.first())
+                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product, productOnClickListener::onClick))
                 favoriteImage.setImageResource(favoriteImageViewRes)
             }
         }

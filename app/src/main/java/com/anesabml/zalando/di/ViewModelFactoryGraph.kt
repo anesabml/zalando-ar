@@ -2,7 +2,7 @@ package com.anesabml.zalando.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.anesabml.zalando.productList.ProductListViewModel
+import com.anesabml.zalando.ui.productList.ProductListViewModel
 
 interface ViewModelFactoryGraph {
     fun getProductListViewModelFactory(): ViewModelProvider.Factory
