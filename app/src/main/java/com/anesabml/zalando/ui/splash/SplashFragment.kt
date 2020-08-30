@@ -31,7 +31,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         binding.motionSplash.setTransitionListener(
             object : MotionLayout.TransitionListener {
                 override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
-                    findNavController().navigate(R.id.productListFragment)
+                    findNavController().navigate(R.id.productsFragment)
                 }
 
                 override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}

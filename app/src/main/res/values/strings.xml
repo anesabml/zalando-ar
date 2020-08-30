@@ -3,4 +3,7 @@
     <string name="no_items_were_found">No Items were found</string>
     <string name="label_splash">Splash</string>
     <string name="label_products">Products</string>
+    <string name="label_new">New</string>
+    <string name="label_men">Men</string>
+    <string name="label_women">Women</string>
 </resources>

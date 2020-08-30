@@ -8,7 +8,8 @@
         ],
         "name": "T-Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "MEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -31,7 +32,8 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "MEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -54,7 +56,8 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
-        "category": "Pants",
+        "addedAt": 1598771511773,
+        "category": "WOMEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -77,7 +80,8 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "WOMEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -100,7 +104,8 @@
         ],
         "name": "T-Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "WOMEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -123,7 +128,8 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
-        "category": "Pants",
+        "addedAt": 1598771511773,
+        "category": "MEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -146,7 +152,8 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "MEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -169,7 +176,8 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "WOMEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -192,7 +200,8 @@
         ],
         "name": "Jeans",
         "description": "Lorem impsum, bla bla",
-        "category": "Pants",
+        "addedAt": 1598771511773,
+        "category": "WOMEN",
         "price": 25.0,
         "availableSizes": [
             "s",
@@ -214,7 +223,8 @@
         ],
         "name": "Shirt",
         "description": "Lorem impsum, bla bla",
-        "category": "T-Shirt",
+        "addedAt": 1598771511773,
+        "category": "MEN",
         "price": 25.0,
         "availableSizes": [
             "s",

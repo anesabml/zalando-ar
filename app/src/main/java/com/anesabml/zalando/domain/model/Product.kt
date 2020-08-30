@@ -1,13 +1,15 @@
 package com.anesabml.zalando.domain.model
 
 import com.anesabml.zalando.utils.Differentiable
+import java.util.Date
 
 data class Product(
     val id: Int,
     val images: List<String>,
     val name: String,
     val description: String,
-    val category: String,
+    val category: ProductCategory,
+    val addedAt: Date,
     val price: Float,
     val availableSizes: List<String>,
     val availableColors: List<String>,

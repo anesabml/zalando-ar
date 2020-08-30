@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.anesabml.zalando.data.entity.ProductEntity
+import com.anesabml.zalando.domain.model.ProductCategory
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -15,4 +16,10 @@ interface ProductDao {
 
     @Query("SELECT * FROM products")
     fun getAll(): Flow<List<ProductEntity>>
+
+    @Query("SELECT * FROM products WHERE category = :category")
+    fun getProductsByCategory(category: ProductCategory): Flow<List<ProductEntity>>
+
+    @Query("SELECT * FROM products ORDER BY addedAt")
+    fun getProductsSortedByTime(): Flow<List<ProductEntity>>
 }

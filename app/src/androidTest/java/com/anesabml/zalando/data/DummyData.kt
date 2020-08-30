@@ -1,6 +1,8 @@
-package com.anesabml.zalando
+package com.anesabml.zalando.data
 
 import com.anesabml.zalando.data.entity.ProductEntity
+import com.anesabml.zalando.domain.model.ProductCategory
+import java.util.Date
 
 object DummyData {
 
@@ -13,7 +15,8 @@ object DummyData {
             ),
             name = "Shirt",
             description = "Lorem impsum, bla bla",
-            category = "T-Shirt",
+            addedAt = 1598771511773L,
+            category = ProductCategory.MEN,
             price = 25.0F,
             availableSizes = listOf(
                 "s",
@@ -35,7 +38,8 @@ object DummyData {
             ),
             name = "Shirt",
             description = "Lorem impsum, bla bla",
-            category = "T-Shirt",
+            addedAt = 1598771511773L,
+            category = ProductCategory.MEN,
             price = 25.0F,
             availableSizes = listOf(
                 "s",

@@ -9,11 +9,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.anesabml.zalando.data.entity.ProductEntity
+import com.anesabml.zalando.utils.DateConverter
 import com.anesabml.zalando.utils.ListConverter
+import com.anesabml.zalando.utils.ProductCategoryConverter
 import com.anesabml.zalando.workers.DatabaseWorker
 
 @Database(entities = [ProductEntity::class], version = 1)
-@TypeConverters(ListConverter::class)
+@TypeConverters(ListConverter::class, DateConverter::class, ProductCategoryConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun productDao(): ProductDao

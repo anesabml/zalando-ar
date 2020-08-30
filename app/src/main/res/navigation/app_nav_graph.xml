@@ -11,8 +11,8 @@
         android:label="@string/label_splash"
         tools:layout="@layout/fragment_splash" />
     <fragment
-        android:id="@+id/productListFragment"
-        android:name="com.anesabml.zalando.productList.ProductListFragment"
+        android:id="@+id/productsFragment"
+        android:name="com.anesabml.zalando.ui.productList.ProductsFragment"
         android:label="@string/label_products"
-        tools:layout="@layout/fragment_product_list" />
+        tools:layout="@layout/fragment_products" />
 </navigation>

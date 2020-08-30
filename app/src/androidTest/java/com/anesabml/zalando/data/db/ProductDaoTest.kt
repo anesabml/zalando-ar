@@ -1,4 +1,4 @@
-package com.anesabml.zalando.db
+package com.anesabml.zalando.data.db
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
@@ -7,11 +7,8 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.anesabml.zalando.CoroutineTestRule
-import com.anesabml.zalando.DummyData
-import com.anesabml.zalando.data.db.AppDatabase
-import com.anesabml.zalando.data.db.ProductDao
+import com.anesabml.zalando.data.DummyData
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runBlockingTest
@@ -21,7 +18,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
 @SmallTest
 class ProductDaoTest {

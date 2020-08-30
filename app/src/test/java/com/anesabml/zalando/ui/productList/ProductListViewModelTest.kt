@@ -1,7 +1,7 @@
 package com.anesabml.zalando.ui.productList
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.anesabml.zalando.data.DummyData
+import com.anesabml.zalando.data.FakeData
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.utils.CoroutineTestRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -25,7 +25,7 @@ class ProductListViewModelTest {
     @Test
     fun `successful request returns list of products`() =
         coroutineTestRule.testCoroutineDispatcher.runBlockingTest {
-            val expectedList = DummyData.products
+            val expectedList = FakeData.products
             val flow = flowOf(expectedList)
 
             testRobot

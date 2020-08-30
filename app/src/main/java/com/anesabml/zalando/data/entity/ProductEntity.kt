@@ -3,6 +3,7 @@ package com.anesabml.zalando.data.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.anesabml.zalando.domain.model.ProductCategory
 import com.anesabml.zalando.utils.Differentiable
 import kotlinx.serialization.Serializable
 
@@ -13,7 +14,8 @@ data class ProductEntity(
     @ColumnInfo val images: List<String>,
     @ColumnInfo val name: String,
     @ColumnInfo val description: String,
-    @ColumnInfo val category: String,
+    @ColumnInfo val category: ProductCategory,
+    @ColumnInfo val addedAt: Long,
     @ColumnInfo val price: Float,
     @ColumnInfo val availableSizes: List<String>,
     @ColumnInfo val availableColors: List<String>,
