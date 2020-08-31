@@ -1,7 +1,8 @@
 package com.anesabml.zalando.ui.productList
 
+import android.view.View
 import com.anesabml.zalando.domain.model.Product
 
 interface ProductInteractionsListener {
-    fun onClick(product: Product)
+    fun onClick(itemView: View, product: Product)
 }

@@ -11,4 +11,6 @@ interface IProductRepository {
     suspend fun getProductsByCategory(category: ProductCategory): Flow<List<Product>>
 
     suspend fun getProductsSortedByTime(): Flow<List<Product>>
+
+    suspend fun getProduct(productId: Int): Flow<Product>
 }

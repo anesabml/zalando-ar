@@ -14,4 +14,10 @@
     <style name="AppTheme.TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="AppTheme.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">?colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button" />
 </resources>

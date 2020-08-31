@@ -10,9 +10,24 @@
         android:name="com.anesabml.zalando.ui.splash.SplashFragment"
         android:label="@string/label_splash"
         tools:layout="@layout/fragment_splash" />
+
     <fragment
         android:id="@+id/productsFragment"
         android:name="com.anesabml.zalando.ui.productList.ProductsFragment"
         android:label="@string/label_products"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.anesabml.zalando.ui.ProductDetailsFragment"
+        android:label="@string/label_product"
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="product_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -22,4 +22,7 @@ interface ProductDao {
 
     @Query("SELECT * FROM products ORDER BY addedAt")
     fun getProductsSortedByTime(): Flow<List<ProductEntity>>
+
+    @Query("SELECT * FROM products WHERE id = :productId")
+    fun getProduct(productId: Int): Flow<ProductEntity>
 }

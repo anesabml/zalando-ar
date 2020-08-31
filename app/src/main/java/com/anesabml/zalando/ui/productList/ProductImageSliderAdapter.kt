@@ -9,7 +9,7 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 
 class ProductImageSliderAdapter(
     private val product: Product,
-    private val productIteractionsListener: ProductInteractionsListener
+    private val productInteractionsListener: ProductInteractionsListener?
 ) : SliderViewAdapter<ProductImageSliderAdapter.ViewHolder>() {
 
     override fun getCount(): Int =
@@ -29,7 +29,7 @@ class ProductImageSliderAdapter(
         fun bind(imageUrl: String) {
             with(binding) {
                 binding.root.setOnClickListener {
-                    productIteractionsListener.onClick(product)
+                    productInteractionsListener?.onClick(it, product)
                 }
                 image.load(imageUrl) {
                     crossfade(true)

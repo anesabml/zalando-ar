@@ -19,4 +19,7 @@ class LocalDataSource(private val productDao: ProductDao) : DataSource {
 
     override fun getProductsSortedByTime(): Flow<List<ProductEntity>> =
         productDao.getProductsSortedByTime()
+
+    override fun getProduct(productId: Int): Flow<ProductEntity> =
+        productDao.getProduct(productId)
 }

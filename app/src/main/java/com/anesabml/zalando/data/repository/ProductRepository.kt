@@ -20,13 +20,16 @@ class ProductRepository(
 
     override suspend fun getProducts(): Flow<List<Product>> =
         dataSource.getProducts()
-            .map { list -> list.map { entity -> mapper.fromEntity(entity) } }
+            .map { list -> list.map(mapper::fromEntity) }
 
     override suspend fun getProductsByCategory(category: ProductCategory): Flow<List<Product>> =
         dataSource.getProductsByCategory(category)
-            .map { list -> list.map { entity -> mapper.fromEntity(entity) } }
+            .map { list -> list.map(mapper::fromEntity) }
 
     override suspend fun getProductsSortedByTime(): Flow<List<Product>> =
         dataSource.getProductsSortedByTime()
-            .map { list -> list.map { entity -> mapper.fromEntity(entity) } }
+            .map { list -> list.map(mapper::fromEntity) }
+
+    override suspend fun getProduct(productId: Int): Flow<Product> =
+        dataSource.getProduct(productId).map(mapper::fromEntity)
 }

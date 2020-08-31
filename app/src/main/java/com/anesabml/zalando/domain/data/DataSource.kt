@@ -13,4 +13,6 @@ interface DataSource {
     fun getProductsByCategory(category: ProductCategory): Flow<List<ProductEntity>>
 
     fun getProductsSortedByTime(): Flow<List<ProductEntity>>
+
+    fun getProduct(productId: Int): Flow<ProductEntity>
 }
