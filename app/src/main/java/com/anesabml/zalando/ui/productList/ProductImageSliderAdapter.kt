@@ -8,8 +8,7 @@ import com.anesabml.zalando.domain.model.Product
 import com.smarteist.autoimageslider.SliderViewAdapter
 
 class ProductImageSliderAdapter(
-    private val product: Product,
-    private val productInteractionsListener: ProductInteractionsListener?
+    private val product: Product
 ) : SliderViewAdapter<ProductImageSliderAdapter.ViewHolder>() {
 
     override fun getCount(): Int =
@@ -23,17 +22,12 @@ class ProductImageSliderAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =
         viewHolder.bind(product.images[position])
 
-    inner class ViewHolder(private val binding: ItemImageSliderBinding) :
+    class ViewHolder(private val binding: ItemImageSliderBinding) :
         SliderViewAdapter.ViewHolder(binding.root) {
 
         fun bind(imageUrl: String) {
-            with(binding) {
-                binding.root.setOnClickListener {
-                    productInteractionsListener?.onClick(it, product)
-                }
-                image.load(imageUrl) {
-                    crossfade(true)
-                }
+            binding.image.load(imageUrl) {
+                crossfade(true)
             }
         }
     }

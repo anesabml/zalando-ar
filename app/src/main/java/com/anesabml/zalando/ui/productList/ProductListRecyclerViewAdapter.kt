@@ -27,16 +27,23 @@ class ProductListRecyclerViewAdapter(private val productIteractionsListener: Pro
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: Product) {
+            val context = binding.root.context
             val animation = AnimationUtils.loadAnimation(
-                binding.root.context,
+                context,
                 R.anim.item_animation_from_bottom
             )
             val favoriteImageViewRes =
                 if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
             with(binding) {
                 root.animation = animation
-                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product, productIteractionsListener))
+                root.transitionName = product.id.toString()
+                root.setOnClickListener {
+                    productIteractionsListener.onClick(itemView, product)
+                }
+                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product))
                 favoriteImage.setImageResource(favoriteImageViewRes)
+                productName.text = product.name
+                productPrice.text = context.getString(R.string.currency, product.price)
             }
         }
     }

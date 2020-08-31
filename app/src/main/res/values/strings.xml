@@ -11,6 +11,6 @@
     <string name="increase_button">Increase Button</string>
     <string name="decrease_button">Decrease Button</string>
     <string name="error_try_again">Error, Try again!</string>
-    <string name="currency">€%f</string>
+    <string name="currency">€%.0f</string>
     <string name="label_product">Product</string>
 </resources>

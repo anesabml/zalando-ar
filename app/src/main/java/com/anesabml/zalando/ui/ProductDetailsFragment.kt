@@ -17,6 +17,7 @@ import com.anesabml.zalando.ui.productDetails.ProductDetailsViewModel
 import com.anesabml.zalando.ui.productDetails.ProductDetailsViewState
 import com.anesabml.zalando.ui.productList.ProductImageSliderAdapter
 import com.anesabml.zalando.viewModelFactoryGraph
+import com.google.android.material.transition.MaterialContainerTransform
 
 class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
@@ -28,15 +29,15 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*sharedElementEnterTransition =
+        sharedElementEnterTransition =
             MaterialContainerTransform().apply {
                 duration = resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
-            }*/
+            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.productImageSlider.transitionName = args.productId.toString()
+        binding.productImageSlider.transitionName = args.productId.toString()
 
         setupViewModelObservers()
     }
@@ -64,7 +65,7 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         with(binding) {
             progressBar.hide()
             groupProductDetails.show()
-            productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product, null))
+            productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product))
             productName.text = product.name
             productPrice.text = getString(R.string.currency, product.price)
             productDescription.text = product.description

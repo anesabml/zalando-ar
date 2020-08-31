@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -83,10 +84,10 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list), ProductInt
     }
 
     override fun onClick(itemView: View, product: Product) {
-//        val extras = FragmentNavigatorExtras(itemView to product.id.toString())
+        val extras = FragmentNavigatorExtras(itemView to product.id.toString())
         val action =
             ProductsFragmentDirections.actionProductsFragmentToProductDetailsFragment(product.id)
-        findNavController().navigate(action)
+        findNavController().navigate(action, extras)
     }
 
     companion object {
