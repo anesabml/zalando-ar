@@ -2,6 +2,6 @@ package com.anesabml.zalando.ui.productList
 
 import com.anesabml.zalando.domain.model.Product
 
-fun interface ProductOnClickListener {
+interface ProductInteractionsListener {
     fun onClick(product: Product)
 }

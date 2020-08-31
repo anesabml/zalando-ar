@@ -9,7 +9,7 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 
 class ProductImageSliderAdapter(
     private val product: Product,
-    private val productOnClickListener: ProductOnClickListener
+    private val productIteractionsListener: ProductInteractionsListener
 ) : SliderViewAdapter<ProductImageSliderAdapter.ViewHolder>() {
 
     override fun getCount(): Int =
@@ -20,9 +20,8 @@ class ProductImageSliderAdapter(
         return ViewHolder(ItemImageSliderBinding.inflate(layoutInflater, parent, false))
     }
 
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =
         viewHolder.bind(product.images[position])
-    }
 
     inner class ViewHolder(private val binding: ItemImageSliderBinding) :
         SliderViewAdapter.ViewHolder(binding.root) {
@@ -30,7 +29,7 @@ class ProductImageSliderAdapter(
         fun bind(imageUrl: String) {
             with(binding) {
                 binding.root.setOnClickListener {
-                    productOnClickListener.onClick(product)
+                    productIteractionsListener.onClick(product)
                 }
                 image.load(imageUrl) {
                     crossfade(true)

@@ -10,7 +10,7 @@ import com.anesabml.zalando.databinding.ItemProductBinding
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.utils.DiffItemCallback
 
-class ProductListRecyclerViewAdapter(private val productOnClickListener: ProductOnClickListener) :
+class ProductListRecyclerViewAdapter(private val productIteractionsListener: ProductInteractionsListener) :
     ListAdapter<Product, ProductListRecyclerViewAdapter.ProductItemViewHolder>(DiffItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductItemViewHolder {
@@ -35,7 +35,7 @@ class ProductListRecyclerViewAdapter(private val productOnClickListener: Product
                 if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
             with(binding) {
                 root.animation = animation
-                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product, productOnClickListener::onClick))
+                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product, productIteractionsListener))
                 favoriteImage.setImageResource(favoriteImageViewRes)
             }
         }
