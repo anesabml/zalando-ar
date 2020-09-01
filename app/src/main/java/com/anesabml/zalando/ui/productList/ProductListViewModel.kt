@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.anesabml.zalando.R
 import com.anesabml.zalando.domain.data.IProductRepository
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.domain.model.ProductCategory
@@ -44,10 +45,15 @@ class ProductListViewModel(
                 }
                 .catch {
                     _state.value =
-                        ProductListViewState.Error(it.message ?: "Error trying to get products")
+                        ProductListViewState.Error(R.string.error_getting_products)
                 }
                 .collect {
-                    _state.value = ProductListViewState.Success(it)
+                    if (it.isEmpty()) {
+                        _state.value =
+                            ProductListViewState.Error(R.string.no_products)
+                    } else {
+                        _state.value = ProductListViewState.Success(it)
+                    }
                 }
         }
     }

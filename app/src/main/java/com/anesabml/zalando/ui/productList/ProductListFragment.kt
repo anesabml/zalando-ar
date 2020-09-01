@@ -14,6 +14,8 @@ import com.anesabml.zalando.R
 import com.anesabml.zalando.databinding.FragmentProductListBinding
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.domain.model.ProductCategory
+import com.anesabml.zalando.extensions.hide
+import com.anesabml.zalando.extensions.show
 import com.anesabml.zalando.extensions.viewBinding
 import com.anesabml.zalando.viewModelFactoryGraph
 
@@ -48,10 +50,21 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list), ProductInt
 
     private fun updateState(viewState: ProductListViewState) {
         when (viewState) {
-            ProductListViewState.Loading -> binding.viewFlipper.displayedChild = LOADING_VIEW_INDEX
-            is ProductListViewState.Error -> binding.viewFlipper.displayedChild = ERROR_VIEW_INDEX
+            ProductListViewState.Loading -> {
+                binding.progressBar.show()
+                binding.recyclerView.hide()
+                binding.errorViewFlow.hide()
+            }
+            is ProductListViewState.Error -> {
+                binding.progressBar.hide()
+                binding.recyclerView.hide()
+                binding.errorViewFlow.show()
+                binding.errorText.text = getString(viewState.stringRes)
+            }
             is ProductListViewState.Success -> {
-                binding.viewFlipper.displayedChild = RECYCLER_VIEW_INDEX
+                binding.progressBar.hide()
+                binding.recyclerView.show()
+                binding.errorViewFlow.hide()
                 _adapter.submitList(viewState.data)
             }
         }

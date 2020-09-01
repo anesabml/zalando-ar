@@ -14,4 +14,6 @@
     <string name="currency">€%.0f</string>
     <string name="label_product">Product</string>
     <string name="colors">Colors</string>
+    <string name="error_getting_products">Error trying to get products</string>
+    <string name="no_products">No products yet</string>
 </resources>
