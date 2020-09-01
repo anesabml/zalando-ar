@@ -66,6 +66,7 @@
             android:id="@+id/flow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:orientation="vertical"
             app:constraint_referenced_ids="product_image_slider,product_name,product_price"
             app:flow_horizontalAlign="start"
