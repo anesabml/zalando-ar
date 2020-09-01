@@ -37,7 +37,7 @@ class ProductListViewModel(
         viewModelScope.launch {
             val result = when (category) {
                 ProductCategory.NEW -> getProductsSortedByTime()
-                else -> getProductsByCategory(category)
+                else -> getProductsByCategory()
             }
             result
                 .onStart {
@@ -61,6 +61,12 @@ class ProductListViewModel(
     private suspend fun getProductsSortedByTime(): Flow<List<Product>> =
         repository.getProductsSortedByTime()
 
-    private suspend fun getProductsByCategory(category: ProductCategory): Flow<List<Product>> =
+    private suspend fun getProductsByCategory(): Flow<List<Product>> =
         repository.getProductsByCategory(this.category)
+
+    fun updateProduct(updatedProduct: Product) {
+        viewModelScope.launch {
+            repository.updateProduct(updatedProduct)
+        }
+    }
 }

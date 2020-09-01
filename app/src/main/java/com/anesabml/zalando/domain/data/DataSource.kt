@@ -15,4 +15,6 @@ interface DataSource {
     fun getProductsSortedByTime(): Flow<List<ProductEntity>>
 
     fun getProduct(productId: Int): Flow<ProductEntity>
+
+    suspend fun updateProduct(productEntity: ProductEntity)
 }

@@ -32,4 +32,7 @@ class ProductRepository(
 
     override suspend fun getProduct(productId: Int): Flow<Product> =
         dataSource.getProduct(productId).map(mapper::fromEntity)
+
+    override suspend fun updateProduct(product: Product) =
+        dataSource.updateProduct(mapper.toEntity(product))
 }

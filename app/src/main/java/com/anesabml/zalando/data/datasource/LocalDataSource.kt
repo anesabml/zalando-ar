@@ -22,4 +22,7 @@ class LocalDataSource(private val productDao: ProductDao) : DataSource {
 
     override fun getProduct(productId: Int): Flow<ProductEntity> =
         productDao.getProduct(productId)
+
+    override suspend fun updateProduct(productEntity: ProductEntity) =
+        productDao.updateProduct(productEntity)
 }

@@ -13,4 +13,6 @@ interface IProductRepository {
     suspend fun getProductsSortedByTime(): Flow<List<Product>>
 
     suspend fun getProduct(productId: Int): Flow<Product>
+
+    suspend fun updateProduct(product: Product)
 }

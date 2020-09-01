@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.anesabml.zalando.data.entity.ProductEntity
 import com.anesabml.zalando.domain.model.ProductCategory
 import kotlinx.coroutines.flow.Flow
@@ -25,4 +26,7 @@ interface ProductDao {
 
     @Query("SELECT * FROM products WHERE id = :productId")
     fun getProduct(productId: Int): Flow<ProductEntity>
+
+    @Update
+    suspend fun updateProduct(productEntity: ProductEntity)
 }

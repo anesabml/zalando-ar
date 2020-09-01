@@ -103,6 +103,11 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list), ProductInt
         findNavController().navigate(action, extras)
     }
 
+    override fun onFavoriteClicked(product: Product) {
+        val updatedProduct = product.copy(isBookmarked = !product.isBookmarked)
+        viewModel.updateProduct(updatedProduct)
+    }
+
     companion object {
         private const val SPAN_COUNT = 2
         private const val RECYCLER_VIEW_INDEX = 0
