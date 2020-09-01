@@ -66,6 +66,13 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         with(binding) {
             progressBar.hide()
             groupProductDetails.show()
+            val favoriteImageViewRes =
+                if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
+            favoriteImage.setImageResource(favoriteImageViewRes)
+            favoriteImage.setOnClickListener {
+                val updatedProduct = product.copy(isBookmarked = !product.isBookmarked)
+                viewModel.updateProduct(updatedProduct)
+            }
             productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product.images))
             productName.text = product.name
             productPrice.text = getString(R.string.currency, product.price)

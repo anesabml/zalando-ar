@@ -10,15 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/favorite_image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="8dp"
-            android:src="@drawable/ic_favorite_border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/product_image_slider_card"
             android:layout_width="match_parent"
@@ -38,6 +29,7 @@
                 android:id="@+id/product_image_slider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 app:sliderAnimationDuration="@android:integer/config_longAnimTime"
                 app:sliderAutoCycleDirection="left"
                 app:sliderAutoCycleEnabled="true"
@@ -50,6 +42,15 @@
                 app:sliderIndicatorSelectedColor="?attr/colorPrimary"
                 app:sliderIndicatorUnselectedColor="#FFFFFF"
                 app:sliderStartAutoCycle="true" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/favorite_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="top|end"
+                android:padding="8dp"
+                android:src="@drawable/ic_favorite_border" />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout

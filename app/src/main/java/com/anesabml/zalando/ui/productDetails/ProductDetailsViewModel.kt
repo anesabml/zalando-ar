@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anesabml.zalando.domain.data.IProductRepository
+import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.ui.ProductDetailsFragment
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
@@ -42,5 +43,12 @@ class ProductDetailsViewModel(
     }
 
     fun addProductToCard() {
+        // TODO
+    }
+
+    fun updateProduct(updatedProduct: Product) {
+        viewModelScope.launch {
+            repository.updateProduct(updatedProduct)
+        }
     }
 }
