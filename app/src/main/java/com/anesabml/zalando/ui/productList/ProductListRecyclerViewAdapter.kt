@@ -40,7 +40,7 @@ class ProductListRecyclerViewAdapter(private val productIteractionsListener: Pro
                 root.setOnClickListener {
                     productIteractionsListener.onClick(itemView, product)
                 }
-                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product))
+                productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product.images))
                 favoriteImage.setImageResource(favoriteImageViewRes)
                 productName.text = product.name
                 productPrice.text = context.getString(R.string.currency, product.price)

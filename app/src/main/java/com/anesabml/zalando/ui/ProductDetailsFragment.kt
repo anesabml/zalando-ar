@@ -1,5 +1,6 @@
 package com.anesabml.zalando.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
@@ -65,13 +66,17 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
         with(binding) {
             progressBar.hide()
             groupProductDetails.show()
-            productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product))
+            productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product.images))
             productName.text = product.name
             productPrice.text = getString(R.string.currency, product.price)
             productDescription.text = product.description
             buttonAddToCard.setOnClickListener {
                 viewModel.addProductToCard()
             }
+            color1.color = Color.parseColor(product.availableColors[0])
+            color2.color = Color.parseColor(product.availableColors[1])
+            color3.color = Color.parseColor(product.availableColors[2])
+            color4.color = Color.parseColor(product.availableColors[3])
             buttonBuyNow.setOnClickListener {}
         }
     }

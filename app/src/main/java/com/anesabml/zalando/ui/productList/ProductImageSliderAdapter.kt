@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import coil.load
 import com.anesabml.zalando.databinding.ItemImageSliderBinding
-import com.anesabml.zalando.domain.model.Product
 import com.smarteist.autoimageslider.SliderViewAdapter
 
 class ProductImageSliderAdapter(
-    private val product: Product
+    private val images: List<String>
 ) : SliderViewAdapter<ProductImageSliderAdapter.ViewHolder>() {
 
     override fun getCount(): Int =
-        product.images.size
+        images.size
 
     override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,7 +19,7 @@ class ProductImageSliderAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =
-        viewHolder.bind(product.images[position])
+        viewHolder.bind(images[position])
 
     class ViewHolder(private val binding: ItemImageSliderBinding) :
         SliderViewAdapter.ViewHolder(binding.root) {

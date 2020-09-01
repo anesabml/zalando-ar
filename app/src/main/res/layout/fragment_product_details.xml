@@ -14,131 +14,185 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/product_image_slider"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product_image_slider_card"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/product_card"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@id/product_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintVertical_weight="0.8"
-        app:sliderAnimationDuration="@android:integer/config_longAnimTime"
-        app:sliderAutoCycleDirection="left"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="@android:integer/config_longAnimTime"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="8dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="2dp"
-        app:sliderIndicatorRadius="1dp"
-        app:sliderIndicatorSelectedColor="?attr/colorPrimary"
-        app:sliderIndicatorUnselectedColor="#FFFFFF"
-        app:sliderStartAutoCycle="true" />
+        app:layout_constraintVertical_weight="0.8">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/product_card"
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/product_image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:sliderAnimationDuration="@android:integer/config_longAnimTime"
+            app:sliderAutoCycleDirection="left"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="@android:integer/config_longAnimTime"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="8dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="2dp"
+            app:sliderIndicatorRadius="1dp"
+            app:sliderIndicatorSelectedColor="?attr/colorPrimary"
+            app:sliderIndicatorUnselectedColor="#FFFFFF"
+            app:sliderStartAutoCycle="true" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/product_info"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_image_slider"
-        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/product_image_slider_card"
         app:layout_constraintVertical_weight="1">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Shirt" />
 
-            <TextView
-                android:id="@+id/product_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textColor="?attr/colorOnSurface"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Shirt" />
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/product_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/product_name"
+            tools:text="€50" />
 
-            <TextView
-                android:id="@+id/product_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:textColor="?attr/colorOnSurface"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/product_name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/product_name"
-                tools:text="€50" />
+        <TextView
+            android:id="@+id/product_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_name"
+            tools:text="@tools:sample/lorem" />
 
-            <TextView
-                android:id="@+id/product_description"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                app:layout_constraintBottom_toTopOf="@+id/button_add_to_card"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/product_name"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="@tools:sample/lorem/random" />
+        <TextView
+            android:id="@+id/colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/colors"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_description" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_buy_now"
-                style="@style/AppTheme.Button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/btn_buy_now"
-                app:cornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toEndOf="@+id/button_add_to_card" />
+        <com.anesabml.zalando.ui.RoundedView
+            android:id="@+id/color_1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:color="@color/colorPrimary"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@id/color_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colors" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_add_to_card"
-                style="@style/AppTheme.OutlinedButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/btn_add_to_card"
-                app:cornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button_buy_now"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent" />
+        <com.anesabml.zalando.ui.RoundedView
+            android:id="@+id/color_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:color="@color/colorPrimary"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@id/color_3"
+            app:layout_constraintStart_toEndOf="@id/color_1"
+            app:layout_constraintTop_toTopOf="@id/color_1"
+            tools:layout_editor_absoluteY="354dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        <com.anesabml.zalando.ui.RoundedView
+            android:id="@+id/color_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:color="@color/colorPrimary"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@id/color_4"
+            app:layout_constraintStart_toEndOf="@id/color_2"
+            app:layout_constraintTop_toTopOf="@id/color_1"
+            tools:layout_editor_absoluteY="354dp" />
+
+        <com.anesabml.zalando.ui.RoundedView
+            android:id="@+id/color_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            app:color="@color/colorPrimary"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/color_3"
+            app:layout_constraintTop_toTopOf="@id/color_1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add_to_card"
+            style="@style/AppTheme.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btn_add_to_card"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_buy_now"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_buy_now"
+            style="@style/AppTheme.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btn_buy_now"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/button_add_to_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_product_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="product_image_slider,favorite_image,product_card"
+        app:constraint_referenced_ids="product_image_slider_card,favorite_image,product_info"
         tools:visibility="visible" />
 
     <androidx.core.widget.ContentLoadingProgressBar
