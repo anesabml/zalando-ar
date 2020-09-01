@@ -3,6 +3,7 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
@@ -20,4 +21,5 @@
     </style>
 
     <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button" />
+
 </resources>
