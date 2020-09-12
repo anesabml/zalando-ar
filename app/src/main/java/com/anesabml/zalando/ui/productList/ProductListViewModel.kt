@@ -33,7 +33,7 @@ class ProductListViewModel(
         getProducts()
     }
 
-    private fun getProducts() {
+    fun getProducts() {
         viewModelScope.launch {
             val result = when (category) {
                 ProductCategory.NEW -> getProductsSortedByTime()

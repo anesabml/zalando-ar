@@ -1,19 +1,16 @@
-package com.anesabml.zalando.ui.productList
+package com.anesabml.zalando.ui.productDetails
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.anesabml.zalando.R
 import com.anesabml.zalando.data.FakeData
-import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.utils.CoroutineTestRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
-class ProductListViewModelTest {
+class ProductDetailsViewModelTest {
 
     @get:Rule
     val coroutineTestRule = CoroutineTestRule()
@@ -21,49 +18,37 @@ class ProductListViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private val testRobot = ProductListViewModelTestRobot()
+    private val testRobot = ProductDetailsViewModelTestRobot()
 
     @Test
-    fun `successful request returns list of products`() =
+    fun `get product by id request should succeed`() =
         coroutineTestRule.testCoroutineDispatcher.runBlockingTest {
             val expectedList = FakeData.products
             val flow = flowOf(expectedList)
+            val expectedProduct = expectedList[0]
 
             testRobot
                 .emit(flow)
                 .buildViewModel()
 //                .assertViewState(ProductListViewState.Loading)
-                .assertViewState(ProductListViewState.Success(expectedList))
-        }
-
-    @Test
-    fun `failure request should catch exception`() =
-        coroutineTestRule.testCoroutineDispatcher.runBlockingTest {
-            val flow = flow<List<Product>> {
-                throw Throwable("Error")
-            }
-            testRobot
-                .emit(flow)
-                .buildViewModel()
-//                .assertViewState(ProductListViewState.Loading)
-                .assertViewState(ProductListViewState.Error(R.string.error_getting_products))
+                .assertViewState(ProductDetailsViewState.Success(expectedProduct))
         }
 
     @Test
     fun `update product request should succeed`() =
         coroutineTestRule.testCoroutineDispatcher.runBlockingTest {
-            val expectedList = FakeData.products.toMutableList()
+            val expectedList = FakeData.products
             val flow = flowOf(expectedList)
+            val expectedProduct = expectedList[0]
             val updatedProduct = expectedList[0].copy(isBookmarked = true)
-            expectedList[0] = updatedProduct
 
             testRobot
                 .emit(flow)
                 .buildViewModel()
 //                .assertViewState(ProductListViewState.Loading)
-                .assertViewState(ProductListViewState.Success(expectedList))
+                .assertViewState(ProductDetailsViewState.Success(expectedProduct))
                 .updateProduct(updatedProduct)
-                .getProducts()
-                .assertViewState(ProductListViewState.Success(expectedList))
+                .getProduct()
+                .assertViewState(ProductDetailsViewState.Success(updatedProduct))
         }
 }

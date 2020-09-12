@@ -28,7 +28,7 @@ class ProductDetailsViewModel(
         getProduct()
     }
 
-    private fun getProduct() {
+    fun getProduct() {
         viewModelScope.launch {
             repository.getProduct(productId)
                 .catch {
