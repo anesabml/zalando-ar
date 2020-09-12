@@ -4,7 +4,7 @@ import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.domain.model.ProductCategory
 import kotlinx.coroutines.flow.Flow
 
-interface IProductRepository {
+interface ProductRepository {
 
     suspend fun getProducts(): Flow<List<Product>>
 
@@ -14,5 +14,5 @@ interface IProductRepository {
 
     suspend fun getProduct(productId: Int): Flow<Product>
 
-    suspend fun updateProduct(product: Product)
+    suspend fun updateProduct(newProduct: Product)
 }

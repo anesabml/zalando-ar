@@ -1,6 +1,7 @@
 package com.anesabml.zalando.ui.productList
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.anesabml.zalando.R
 import com.anesabml.zalando.data.FakeData
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.utils.CoroutineTestRule
@@ -45,6 +46,6 @@ class ProductListViewModelTest {
                 .emit(flow)
                 .buildViewModel()
 //                .assertViewState(ProductListViewState.Loading)
-                .assertViewState(ProductListViewState.Error("Error"))
+                .assertViewState(ProductListViewState.Error(R.string.error_getting_products))
         }
 }

@@ -1,4 +1,4 @@
-package com.anesabml.zalando.ui
+package com.anesabml.zalando.ui.productDetails
 
 import android.graphics.Color
 import android.os.Bundle
@@ -14,8 +14,6 @@ import com.anesabml.zalando.extensions.hide
 import com.anesabml.zalando.extensions.show
 import com.anesabml.zalando.extensions.showSnackBar
 import com.anesabml.zalando.extensions.viewBinding
-import com.anesabml.zalando.ui.productDetails.ProductDetailsViewModel
-import com.anesabml.zalando.ui.productDetails.ProductDetailsViewState
 import com.anesabml.zalando.ui.productList.ProductImageSliderAdapter
 import com.anesabml.zalando.viewModelFactoryGraph
 import com.google.android.material.transition.MaterialContainerTransform

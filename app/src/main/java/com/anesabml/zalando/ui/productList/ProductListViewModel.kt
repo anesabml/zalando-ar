@@ -6,7 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anesabml.zalando.R
-import com.anesabml.zalando.domain.data.IProductRepository
+import com.anesabml.zalando.domain.data.ProductRepository
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.domain.model.ProductCategory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 @ExperimentalCoroutinesApi
 class ProductListViewModel(
     savedStateHandle: SavedStateHandle,
-    private val repository: IProductRepository
+    private val repository: ProductRepository
 ) : ViewModel() {
 
     private val category = savedStateHandle.get<ProductCategory>(ProductListFragment.CATEGORY_ARG)!!

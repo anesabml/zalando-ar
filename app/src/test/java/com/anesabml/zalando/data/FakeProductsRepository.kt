@@ -1,11 +1,14 @@
 package com.anesabml.zalando.data
 
-import com.anesabml.zalando.domain.data.IProductRepository
+import com.anesabml.zalando.domain.data.ProductRepository
 import com.anesabml.zalando.domain.model.Product
 import com.anesabml.zalando.domain.model.ProductCategory
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.toList
 
-class FakeProductsRepository : IProductRepository {
+class FakeProductsRepository : ProductRepository {
 
     private lateinit var flow: Flow<List<Product>>
 
@@ -19,6 +22,17 @@ class FakeProductsRepository : IProductRepository {
 
     override suspend fun getProductsSortedByTime(): Flow<List<Product>> {
         return flow
+    }
+
+    override suspend fun getProduct(productId: Int): Flow<Product> {
+        return flow.map { list -> list.find { product -> product.id == productId }!! }
+    }
+
+    override suspend fun updateProduct(newProduct: Product) {
+        val list = flow.toList(mutableListOf())[0].toMutableList()
+        val oldProduct = list.find { it.id == newProduct.id }!!
+        list[list.indexOf(oldProduct)] = newProduct
+        flow = flowOf(list)
     }
 
     fun emitFlow(newFlow: Flow<List<Product>>) {

@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.anesabml.zalando.ui.ProductDetailsFragment"
+        android:name="com.anesabml.zalando.ui.productDetails.ProductDetailsFragment"
         android:label="@string/label_product"
         tools:layout="@layout/fragment_product_details">
         <argument

@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.anesabml.zalando.domain.data.IProductRepository
+import com.anesabml.zalando.domain.data.ProductRepository
 import com.anesabml.zalando.domain.model.Product
-import com.anesabml.zalando.ui.ProductDetailsFragment
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -16,7 +15,7 @@ import kotlinx.coroutines.launch
 @ExperimentalCoroutinesApi
 class ProductDetailsViewModel(
     handle: SavedStateHandle,
-    private val repository: IProductRepository
+    private val repository: ProductRepository
 ) : ViewModel() {
 
     private val productId = handle.get<Int>(ProductDetailsFragment.PRODUCT_ID_ARG) ?: -1

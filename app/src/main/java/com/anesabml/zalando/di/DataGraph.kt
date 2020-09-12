@@ -4,12 +4,12 @@ import android.content.Context
 import com.anesabml.zalando.data.datasource.LocalDataSource
 import com.anesabml.zalando.data.db.AppDatabase
 import com.anesabml.zalando.data.mapper.DatabaseMapper
-import com.anesabml.zalando.data.repository.ProductRepository
+import com.anesabml.zalando.data.repository.DefaultProductRepository
 import com.anesabml.zalando.domain.data.DataSource
 
 interface DataGraph {
     val dataSource: DataSource
-    val productRepository: ProductRepository
+    val productRepository: DefaultProductRepository
 }
 
 class BaseDataGraph(context: Context) : DataGraph {
@@ -17,7 +17,7 @@ class BaseDataGraph(context: Context) : DataGraph {
         LocalDataSource(AppDatabase.getInstance(context).productDao())
     }
 
-    override val productRepository: ProductRepository by lazy {
-        ProductRepository(dataSource, DatabaseMapper)
+    override val productRepository: DefaultProductRepository by lazy {
+        DefaultProductRepository(dataSource, DatabaseMapper)
     }
 }
