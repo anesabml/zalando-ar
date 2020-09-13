@@ -6,7 +6,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
+import androidx.navigation.fragment.findNavController
 import com.anesabml.zalando.R
 import com.anesabml.zalando.databinding.FragmentProductDetailsBinding
 import com.anesabml.zalando.domain.model.Product
@@ -16,7 +16,6 @@ import com.anesabml.zalando.extensions.showSnackBar
 import com.anesabml.zalando.extensions.viewBinding
 import com.anesabml.zalando.ui.productList.ProductImageSliderAdapter
 import com.anesabml.zalando.viewModelFactoryGraph
-import com.google.android.material.transition.MaterialContainerTransform
 
 class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
 
@@ -24,20 +23,9 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
     private val viewModel: ProductDetailsViewModel by viewModels {
         requireContext().viewModelFactoryGraph().getProductDetailsViewModelFactory(this)
     }
-    private val args: ProductDetailsFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        sharedElementEnterTransition =
-            MaterialContainerTransform().apply {
-                duration = resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
-            }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.productImageSlider.transitionName = args.productId.toString()
-
         setupViewModelObservers()
     }
 
@@ -66,10 +54,13 @@ class ProductDetailsFragment : Fragment(R.layout.fragment_product_details) {
             groupProductDetails.show()
             val favoriteImageViewRes =
                 if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
-            favoriteImage.setImageResource(favoriteImageViewRes)
-            favoriteImage.setOnClickListener {
+            favoriteIcon.setImageResource(favoriteImageViewRes)
+            favoriteIcon.setOnClickListener {
                 val updatedProduct = product.copy(isBookmarked = !product.isBookmarked)
                 viewModel.updateProduct(updatedProduct)
+            }
+            arIcon.setOnClickListener {
+                findNavController().navigate(R.id.action_productDetailsFragment_to_productArFragment)
             }
             productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product.images))
             productName.text = product.name

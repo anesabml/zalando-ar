@@ -25,32 +25,54 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_weight="1">
 
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/product_image_slider"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                app:sliderAnimationDuration="@android:integer/config_longAnimTime"
-                app:sliderAutoCycleDirection="left"
-                app:sliderAutoCycleEnabled="true"
-                app:sliderIndicatorAnimationDuration="@android:integer/config_longAnimTime"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="8dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="2dp"
-                app:sliderIndicatorRadius="1dp"
-                app:sliderIndicatorSelectedColor="?attr/colorPrimary"
-                app:sliderIndicatorUnselectedColor="#FFFFFF"
-                app:sliderStartAutoCycle="true" />
+                android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/favorite_image"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="top|end"
-                android:padding="8dp"
-                android:src="@drawable/ic_favorite_border" />
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/product_image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sliderAnimationDuration="@android:integer/config_longAnimTime"
+                    app:sliderAutoCycleDirection="left"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="@android:integer/config_longAnimTime"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="8dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="2dp"
+                    app:sliderIndicatorRadius="1dp"
+                    app:sliderIndicatorSelectedColor="?attr/colorPrimary"
+                    app:sliderIndicatorUnselectedColor="#FFFFFF"
+                    app:sliderStartAutoCycle="true" />
 
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/favorite_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="top|end"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_favorite_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ar_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_round_center_focus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/favorite_icon" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -198,7 +220,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:constraint_referenced_ids="product_image_slider_card,favorite_image,product_info"
+            app:constraint_referenced_ids="product_image_slider_card,product_info"
             tools:visibility="visible" />
 
         <androidx.core.widget.ContentLoadingProgressBar

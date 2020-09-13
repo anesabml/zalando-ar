@@ -29,5 +29,19 @@
         <argument
             android:name="product_id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productArFragment"
+            app:destination="@id/productArFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productArFragment"
+        android:name="com.anesabml.zalando.ui.productArScene.ProductArFragment"
+        android:label="@string/label_product"
+        tools:layout="@layout/fragment_ar_scene">
     </fragment>
 </navigation>

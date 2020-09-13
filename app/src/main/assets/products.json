@@ -195,29 +195,6 @@
   {
     "id": 9,
     "images": [
-      "https://images.unsplash.com/photo-1548454433-4a1812514573?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=674&q=80"
-    ],
-    "name": "Lorem ipsum",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare odio nisi, ac commodo justo euismod ut. Etiam bibendum enim id dui aliquet finibus ullamcorper eu sapien. Donec congue facilisis accumsan. Fusce volutpat mi tellus, at mattis lorem vulputate a. Maecenas blandit scelerisque sem, quis vestibulum tellus dictum ac.",
-    "addedAt": 1598771511773,
-    "category": "WOMEN",
-    "price": 25.0,
-    "availableSizes": [
-      "s",
-      "m",
-      "l"
-    ],
-    "availableColors": [
-      "#FBC02D",
-      "#689F38",
-      "#03DAC5",
-      "#E4E4E4"
-    ],
-    "isBookmarked": false
-  },
-  {
-    "id": 10,
-    "images": [
       "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=852&q=80"
     ],
     "name": "Lorem ipsum",

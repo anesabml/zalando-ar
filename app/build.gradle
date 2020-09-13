@@ -4,6 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlinx-serialization'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+sceneform.asset('sampledata/T-shirt.obj',
+        'default',
+        'sampledata/T-shirt.sfa',
+        'src/main/assets/T-shirt')
 
 android {
     compileSdkVersion 30
@@ -11,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId "com.anesabml.zalando"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -50,6 +56,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlin_version"
     implementation "androidx.core:core-ktx:$rootProject.corektx_version"
     implementation "androidx.appcompat:appcompat:$rootProject.appcompat_version"
+    implementation "androidx.activity:activity-ktx:$rootProject.activityktx_version"
+    implementation "androidx.fragment:fragment:$rootProject.fragmentktx_version"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout_version"
 
     implementation "com.google.android.material:material:$rootProject.material_version"
@@ -79,6 +87,9 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$rootProject.work_version"
 
     implementation "com.github.smarteist:autoimageslider:$rootProject.image_slider_version"
+
+    implementation "com.google.ar:core:$rootProject.arcore_version"
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:$rootProject.sceneform_version"
 
     testImplementation "junit:junit:4.13"
     testImplementation "com.google.truth:truth:$rootProject.truth_version"

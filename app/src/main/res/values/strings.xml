@@ -16,4 +16,5 @@
     <string name="colors">Colors</string>
     <string name="error_getting_products">Error trying to get products</string>
     <string name="no_products">No products yet</string>
+    <string name="camera_permission_denied">This feature can not work without camera permission denied</string>
 </resources>

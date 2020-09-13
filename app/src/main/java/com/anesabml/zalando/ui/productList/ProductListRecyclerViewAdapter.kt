@@ -36,9 +36,8 @@ class ProductListRecyclerViewAdapter(private val productIteractionsListener: Pro
                 if (product.isBookmarked) R.drawable.ic_favorite else R.drawable.ic_favorite_border
             with(binding) {
                 root.animation = animation
-                root.transitionName = product.id.toString()
                 root.setOnClickListener {
-                    productIteractionsListener.onClick(itemView, product)
+                    productIteractionsListener.onClick(root, product)
                 }
                 productImageSlider.setSliderAdapter(ProductImageSliderAdapter(product.images))
                 favoriteImage.setImageResource(favoriteImageViewRes)
