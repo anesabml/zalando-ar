@@ -16,7 +16,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.anesabml.zalando"
+        applicationId "com.anesabml.zalandoar"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1

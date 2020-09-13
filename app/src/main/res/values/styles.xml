@@ -3,14 +3,12 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
-    <style name="AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar">
-
-    </style>
+    <style name="AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar" />
 
     <style name="AppTheme.TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>

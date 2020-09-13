@@ -7,23 +7,27 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.anesabml.zalando.ui.splash.SplashFragment"
+        android:name="com.anesabml.zalandoar.ui.splash.SplashFragment"
         android:label="@string/label_splash"
         tools:layout="@layout/fragment_splash" />
 
     <fragment
         android:id="@+id/productsFragment"
-        android:name="com.anesabml.zalando.ui.productList.ProductsFragment"
+        android:name="com.anesabml.zalandoar.ui.productList.ProductsFragment"
         android:label="@string/label_products"
         tools:layout="@layout/fragment_products">
         <action
             android:id="@+id/action_productsFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
 
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.anesabml.zalando.ui.productDetails.ProductDetailsFragment"
+        android:name="com.anesabml.zalandoar.ui.productDetails.ProductDetailsFragment"
         android:label="@string/label_product"
         tools:layout="@layout/fragment_product_details">
         <argument
@@ -40,7 +44,7 @@
 
     <fragment
         android:id="@+id/productArFragment"
-        android:name="com.anesabml.zalando.ui.productArScene.ProductArFragment"
+        android:name="com.anesabml.zalandoar.ui.productArScene.ProductArFragment"
         android:label="@string/label_product"
         tools:layout="@layout/fragment_ar_scene">
     </fragment>
